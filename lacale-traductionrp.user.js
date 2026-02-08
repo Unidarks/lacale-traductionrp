@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         La Cale Traductions RP
 // @namespace    https://github.com/Unidarks/lacale-traductionrp
-// @version      1.4
+// @version      1.5
 // @license      GNU GPLv3
 // @description  Ajoute une bulle de sur les termes du roleplay de la piraterie, traduits en termes classique du warez. Pour les nouveaux membres non initiés.
 // @author       Unidark
@@ -190,7 +190,7 @@
         },
         {
             pattern: /(?<!\p{L})flibusti(er|(è|e)re)s?(?!\p{L})/gui,
-            translation: "Membre de l'équipe Team Pending (TP) qui traire les soumissions de nouveaux torrents (uploads)"
+            translation: "Membre de l'équipe Team Pending (TP) qui traite les soumissions de nouveaux torrents (uploads)"
         },
         {
             pattern: /\bma(î|i)tres?( |-)d('|’)(é|e)quipages?\b/gi,

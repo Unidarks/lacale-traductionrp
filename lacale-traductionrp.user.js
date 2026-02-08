@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         La Cale Traductions RP
 // @namespace    https://github.com/Unidarks/lacale-traductionrp
-// @version      1.5
+// @version      1.6
 // @license      GNU GPLv3
 // @description  Ajoute une bulle de sur les termes du roleplay de la piraterie, traduits en termes classique du warez. Pour les nouveaux membres non initiés.
 // @author       Unidark
@@ -19,7 +19,7 @@
 
     const DICTIONARY = [
         {
-            pattern: /\b((la|les|des) )?cargaisons? jetée?s? à la mer\b/gi,
+            pattern: /\b((la|les) )?cargaisons? jetée?s? à la mer\b/gi,
             translation: "Torrent retiré"
         },
         {
@@ -31,7 +31,7 @@
             translation: "Supprimer, effacer, retirer"
         },
         {
-            pattern: /\b((la|les|des) )?cargaisons?\b/gi,
+            pattern: /\b((la|les) )?cargaisons?\b/gi,
             translation: "Torrent"
         },
         {
@@ -39,7 +39,7 @@
             translation: "Torrent complété"
         },
         {
-            pattern: /\bDocuments? de Bord\b/gi,
+            pattern: /\b((le|les) )?Documents? de Bord\b/gi,
             translation: "Fiche info"
         },
         {
@@ -47,7 +47,7 @@
             translation: "Téléchargement comptant de moitié dans le ratio"
         },
         {
-            pattern: /\bdoublons?\b/gi,
+            pattern: /\b((le|les) )?doublons?\b/gi,
             translation: "Crédits/Monnaie virtuelle"
         },
         {
@@ -55,11 +55,11 @@
             translation: "Leech/téléchargement"
         },
         {
-            pattern: /\blettres? de marque\b/gi,
+            pattern: /\b((la|les) )?lettres? de marque\b/gi,
             translation: "Invitation"
         },
         {
-            pattern: /\bcode d('|’)honneur\b/gi,
+            pattern: /\b(le )?code d('|’)honneur\b/gi,
             translation: "Ratio up/down"
         },
         {
@@ -83,7 +83,7 @@
             translation: "Documentation API"
         },
         {
-            pattern: /\bquai principal\b/gi,
+            pattern: /\b(le )?quai principal\b/gi,
             translation: "Catégorie du torrent"
         },
         {
@@ -95,7 +95,7 @@
             translation: "Sanction"
         },
         {
-            pattern: /\bcorbeaux?( voyageurs?)?\b/gi,
+            pattern: /\b((un|le|les) )?corbeaux?( voyageurs?)?\b/gi,
             translation: "Message privé"
         },
         {
@@ -136,15 +136,15 @@
             translation: "Statistiques"
         },
         {
-            pattern: /\b(le )?marché noir\b/gi,
+            pattern: /\b((le|au) )?marché noir\b/gi,
             translation: "Boutique"
         },
         {
-            pattern: /\b(la )?boussole\b/gi,
+            pattern: /\b((la|sur) )?boussole\b/gi,
             translation: "Moteur de recherche"
         },
         {
-            pattern: /\bpigeonnier\b/gi,
+            pattern: /\b(le )?pigeonnier\b/gi,
             translation: "Messagerie"
         },
         {
@@ -152,29 +152,29 @@
             translation: "Téléchargé/leech"
         },
         {
-            pattern: /\bhauts? faits??\b/gi,
+            pattern: /\b((les|le) )?hauts? faits??\b/gi,
             translation: "Trophée"
         },
         {
-            pattern: /\bchangelogs?\b/gi,
+            pattern: /\b((le|les) )?changelogs?\b/gi,
             translation: "Journal de modifications et mises à jour"
         },
         /* ROLES */
         {
-            pattern: /\bpirates?\b/gi,
-            translation: "Membre de la communauté"
-        },
-        {
-            pattern: /\bmousses?\b/gi,
+            pattern: /\b((le|les) )?mousses?\b/gi,
             translation: "Novice / Pas ou peu d'upload de nouveau torrents"
         },
         {
-            pattern: /\b(taverniers?|officiers? de bord)\b/gi,
+            pattern: /\b((le|les) )?(taverniers?|(l('|’))?officiers? de bord)\b/gi,
             translation: "Modérateur"
         },
         {
             pattern: /\bfrères? d('|’)arme\b/gi,
             translation: "Membre d'honneur"
+        },
+        {
+            pattern: /\bmatelots? anonymes?\b/gi,
+            translation: "Membre anonyme"
         },
         {
             pattern: /\bmatelots?\b/gi,
@@ -185,23 +185,23 @@
             translation: "Membre distingué par le staff"
         },
         {
-            pattern: /\bartilleu(r|euse)s?\b/gi,
+            pattern: /\b((le|les) )?artilleu(r|euse)s?\b/gi,
             translation: "TEAM ou membre actif qui envoi des torrents de son cru"
         },
         {
-            pattern: /(?<!\p{L})flibusti(er|(è|e)re)s?(?!\p{L})/gui,
+            pattern: /\b((le|la|les) )?flibusti(er|(è|e)re)s?\b/gui,
             translation: "Membre de l'équipe Team Pending (TP) qui traite les soumissions de nouveaux torrents (uploads)"
         },
         {
-            pattern: /\bma(î|i)tres?( |-)d('|’)(é|e)quipages?\b/gi,
+            pattern: /\b((le|la|les) )?ma(î|i)tres?( |-)d('|’)(é|e)quipages?\b/gi,
             translation: "Super modérateur"
         },
         {
-            pattern: /\bquartier( |-)ma(î|i)tres?\b/gi,
+            pattern: /\b((le|la|les) )?quartier( |-)ma(î|i)tres?\b/gi,
             translation: "Administrateur"
         },
         {
-            pattern: /\bcapitaines?\b/gi,
+            pattern: /\b((le|la|les) )?capitaines?\b/gi,
             translation: "Si rôle : Super administrateur"
         },
         {

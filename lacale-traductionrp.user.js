@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         La Cale Traductions RP
-// @namespace    http://github.com/Unidarks
-// @version      1.0
+// @namespace    https://github.com/Unidarks/lacale-traductionrp
+// @version      1.1
 // @license      GNU GPLv3
 // @description  Ajoute une bulle de sur les termes du roleplay de la piraterie, traduits en termes classique du warez. Pour les nouveaux membres non initiés.
 // @author       Unidark
@@ -16,10 +16,6 @@
     // =============================================================================
     // 1. CONFIGURATION & DICTIONNAIRE
     // =============================================================================
-
-    // CONSIGNE : Mettez vos traductions au SINGULIER.
-    // Le script détectera automatiquement si le mot trouvé est au pluriel
-    // et ajoutera un 's' (ou 'S') à la traduction tout seul.
 
     const DICTIONARY = [
         {
@@ -388,8 +384,6 @@
             finalHtml = finalHtml.replace(/___RP_TOKEN_(\d+)___/g, (fullMatch, index) => {
                 const p = placeholders[index];
                 const safeMatch = escapeHTML(p.match);
-                // ATTENTION : On ne met plus le tooltip HTML ici pour alléger le DOM et sortir du contexte
-                // On stocke la traduction dans "data-rp-translation"
                 const content = `<span class="${WORD_CLASS}">${safeMatch}</span><span class="${INFO_ICON_CLASS}">i</span>`;
                 return `<span class="${WRAPPER_CLASS}" data-rp-translation="${escapeHTML(p.translation)}">${content}</span>`;
             });

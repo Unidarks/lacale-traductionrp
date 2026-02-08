@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         La Cale Traductions RP
 // @namespace    https://github.com/Unidarks/lacale-traductionrp
-// @version      1.2
+// @version      1.3
 // @license      GNU GPLv3
 // @description  Ajoute une bulle de sur les termes du roleplay de la piraterie, traduits en termes classique du warez. Pour les nouveaux membres non initiés.
 // @author       Unidark
@@ -19,7 +19,11 @@
 
     const DICTIONARY = [
         {
-            pattern: /\b((la|les) )?(cargaison|butin)s?\b/gi,
+            pattern: /\b((la|les) )?cargaisons?\b/gi,
+            translation: "Torrent"
+        },
+        {
+            pattern: /\b((le|les) )?butins?\b/gi,
             translation: "Torrent complété"
         },
         {
